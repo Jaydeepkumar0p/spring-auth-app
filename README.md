@@ -1,6 +1,8 @@
-# 🚀 Task Management System – Backend (Deployed)
+# 🚀 Task Management System – Backend (Spring Boot)
 
-I’m excited to share the successful deployment of my **Task Management System Backend** built with a scalable and production-ready architecture.
+A **production-ready backend API** for a Task Management System built using **Spring Boot**, featuring secure authentication, advanced notification scheduling, and scalable architecture.
+
+---
 
 ## 🔗 Live API
 
@@ -10,81 +12,146 @@ I’m excited to share the successful deployment of my **Task Management System 
 
 ## 🧠 Tech Stack
 
-* **Node.js** & **Express.js** – Backend framework
-* **MongoDB** & **Mongoose** – Database
-* **JWT (JSON Web Tokens)** – Authentication
-* **Bcrypt.js** – Password hashing
-* **Nodemailer** – Email notifications
-* **Node-cron** – Scheduled jobs (due task alerts)
+* **Java**
+* **Spring Boot**
+* **Spring Security**
+* **JWT (JSON Web Token)**
+* **MongoDB / PostgreSQL**
+* **Spring Scheduler (@Scheduled)**
+* **Maven**
 
 ---
 
-## 🔐 Key Features
+## ✨ Features
 
-### ✅ Authentication & Security
+### 🔐 Authentication & Authorization
 
-* User Signup & Login
-* JWT-based Authentication
-* Protected Routes using Middleware
-* Secure Password Hashing
+* User Registration & Login
+* Secure JWT-based authentication
+* Role-based route protection (optional extendable)
+* Password encryption using BCrypt
+
+---
 
 ### 📋 Task Management
 
 * Create, Update, Delete Tasks
 * Mark tasks as Completed / Pending
-* Priority Levels (Low, Medium, High)
-* Due Date Tracking & Overdue Detection
-
-### 🔔 Notification System
-
-* Automated email notifications for upcoming & overdue tasks
-* Cron jobs to monitor deadlines
-
-### 📊 Scalable API Design
-
-* RESTful API structure
-* Clean MVC architecture
-* Modular and maintainable codebase
+* Task Priorities (Low, Medium, High)
+* Due Date Tracking
+* Overdue Task Detection
 
 ---
 
-## 📂 API Highlights
+### 🔔 Advanced Notification System
 
-* `/api/auth` → Authentication routes
-* `/api/tasks` → Task CRUD operations
-* `/api/notifications` → Notification handling
+* Scheduled task reminders using Spring Scheduler
+* Alerts for:
 
----
-
-## ⚙️ Deployment
-
-* Backend deployed and accessible via live API
-* Environment variables used for security (JWT secret, DB URI, email creds)
+  * Upcoming tasks
+  * Overdue tasks
+* Background processing for efficient performance
 
 ---
 
-## 💡 What I Learned
+### 📊 Backend Architecture
 
-* Building secure authentication systems with JWT
-* Designing scalable REST APIs
-* Handling background jobs using cron
-* Integrating email services for real-time notifications
+* Layered architecture:
 
----
-
-## 📌 Future Improvements
-
-* Real-time notifications with WebSockets
-* Advanced analytics APIs
-* Role-based access control (RBAC)
-* Performance optimization & caching
+  * Controller → Service → Repository
+* RESTful API design
+* Centralized exception handling
+* Input validation
 
 ---
 
-## 🙌 Feedback
+## 📂 API Endpoints
 
-I’d love to hear your feedback or suggestions! Feel free to explore the API and share your thoughts.
+### 🔑 Auth Routes
+
+* `POST /api/auth/register` → Register user
+* `POST /api/auth/login` → Login user
+
+### 📋 Task Routes
+
+* `GET /api/tasks` → Get all tasks
+* `POST /api/tasks` → Create task
+* `PUT /api/tasks/{id}` → Update task
+* `DELETE /api/tasks/{id}` → Delete task
 
 ---
 
-⭐ Don’t forget to star the repo if you like the project!
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/task-manager-backend.git
+cd task-manager-backend
+```
+
+### 2️⃣ Configure environment variables
+
+Create `application.properties` or `application.yml`:
+
+```properties
+spring.datasource.url=YOUR_DB_URL
+spring.datasource.username=YOUR_DB_USER
+spring.datasource.password=YOUR_DB_PASSWORD
+
+jwt.secret=YOUR_SECRET_KEY
+jwt.expiration=86400000
+```
+
+### 3️⃣ Run the application
+
+```bash
+mvn spring-boot:run
+```
+
+---
+
+## 🧪 Testing
+
+* Use Postman or Thunder Client to test API endpoints
+* Add JWT token in Authorization header:
+
+```
+Bearer <your_token>
+```
+
+---
+
+## 🚀 Deployment
+
+* Backend deployed successfully
+* Environment variables secured
+* Ready for frontend integration
+
+---
+
+## 💡 Future Enhancements
+
+* 🔄 Real-time notifications (WebSockets)
+* 📊 Advanced analytics APIs
+* 🐳 Docker containerization
+* 🔐 Role-based access control (RBAC)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork this repo and submit a pull request.
+
+---
+
+## 📬 Contact
+
+**Jaydeep Kumar**
+
+* LinkedIn: [www.linkedin.com/in/jaydeep-kumar-000b5424b]
+* Email: jaideepkr.0123@gmail.com
+
+---
+
+⭐ If you like this project, don’t forget to **star the repo!**
