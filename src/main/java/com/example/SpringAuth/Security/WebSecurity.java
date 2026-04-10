@@ -51,10 +51,11 @@ public class WebSecurity {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(List.of(
-                "http://localhost:5173",
-                "https://your-frontend.vercel.app"
-        ));
+       config.setAllowedOrigins(List.of(
+    "http://localhost:3000",   // ✅ add this
+    "http://localhost:5173",   // optional
+    "https://your-frontend.vercel.app"
+));
 
         config.setAllowedMethods(List.of(
                 "GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"
