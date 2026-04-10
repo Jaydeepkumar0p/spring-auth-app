@@ -46,31 +46,27 @@ public class WebSecurity {
                 .build();
     }
 
-    // ✅ FINAL CORS CONFIG (SAFE)
+
+
     @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration config = new CorsConfiguration();
-
-        config.setAllowedOrigins(List.of(
-                "http://localhost:5173",
-                 "http://localhost:3000",
-                "https://your-frontend.vercel.app"
-        ));
-
-        config.setAllowedMethods(List.of(
-                "GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"
-        ));
-
-        config.setAllowedHeaders(List.of("*"));
-        config.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
-
-        source.registerCorsConfiguration("/**", config);
-        return source;
-    }
-
+public CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration config = new CorsConfiguration();
+    
+    // ✅ Allow all origins (use this for now, restrict later)
+    config.setAllowedOriginPatterns(List.of("*"));
+    
+    config.setAllowedMethods(List.of(
+            "GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"
+    ));
+    config.setAllowedHeaders(List.of("*"));
+    config.setExposedHeaders(List.of("Authorization"));
+    config.setAllowCredentials(true);
+    config.setMaxAge(3600L);
+    
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**", config);
+    return source;
+}
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider =
