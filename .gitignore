@@ -1,0 +1,44 @@
+# Maven
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+HELP.md
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# STS / Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+.vscode/
+
+# Secrets and logs
+*.class
+*.log
+.env
+
+# Do NOT add application-prod.properties here
+# Railway needs it in the repo to load ${ENV_VARS}
